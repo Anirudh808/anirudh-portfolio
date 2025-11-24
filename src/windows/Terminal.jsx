@@ -27,11 +27,13 @@ const Terminal = () => {
             <li key={category} className="flex items-center">
               <CheckIcon className="check" size={20} />
               <h3>{category}</h3>
-              <ul>
+              <ul className="flex overflow-hidden">
                 {items.map((item, i) => (
                   <li key={i}>
-                    {item}
-                    {i < items.length - 1 ? "," : ""}
+                    <>
+                      {item}
+                      {i < items.length - 1 ? "," : ""}
+                    </>
                   </li>
                 ))}
               </ul>

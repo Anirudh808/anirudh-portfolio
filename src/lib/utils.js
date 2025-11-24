@@ -1,5 +1,6 @@
-export const scaleValue = (value, from, to) => {
-  const scale = (to[1] - to[0]) / (from[1] - from[0]);
-  const capped = Math.min(from[1], Math.max(from[0], value)) - from[0];
-  return Math.floor(capped * scale + to[0]);
-};
+import { clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs) {
+  return twMerge(clsx(inputs));
+}
